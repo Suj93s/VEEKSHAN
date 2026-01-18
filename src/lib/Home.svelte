@@ -1,11 +1,5 @@
 <script>
-    import { createEventDispatcher } from 'svelte';
-
-    const dispatch = createEventDispatcher();
-
-    function switchToListening() {
-        dispatch('changeView', 'listening');
-    }
+    export let startRecording;
 </script>
 
 <main>
@@ -13,7 +7,7 @@
         <div class="waveform-container">
             <!-- Invisible placeholder to match Listening screen layout -->
         </div>
-        <div class="controls-container" on:click={switchToListening} on:keydown={() => {}} role="button" tabindex="0">
+        <div class="controls-container" on:click={startRecording} on:keydown={() => {}} role="button" tabindex="0">
             <img src="/assets/circle-microphone-lines.svg" alt="Microphone Icon" class="mic-icon">
         </div>
     </div>
